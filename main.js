@@ -1,5 +1,7 @@
 var type = "stop"
-const click = new Audio("click.wav")
+// const click = new Audio("click.wav") //https://opengameart.org/content/click
+const click = new Audio("selectNoise.wav") //https://opengameart.org/content/select-like-sound
+click.volume = 1 // set max volume
 
 function Irregular(){
     type= "irregular"
@@ -32,33 +34,18 @@ async function loop() {
     // check if on time
     let time = (new Date()).getSeconds()
     time = 60-time
-    // console.log(time)
     await sleep(time*1000)
-    // await sleep(10*1000)
-    
-    
-    
+
     if(type=="irregular"){
         // sleep for random time
         const time = 50 // max offset time
         let rand = Math.floor(Math.random()*time)
         await sleep(rand*1000)
     }
-    
-    
-    
-    
-    // play sound https://opengameart.org/content/click
+    // play sound
     click.play()
-
-
-
     // loop
     loop()
-}
-
-function sound(){
-
 }
 
 function sleep(ms) {
