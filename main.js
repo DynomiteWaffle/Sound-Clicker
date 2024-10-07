@@ -17,6 +17,9 @@ function Stop(){
     type = "stop"
     document.getElementById("mode").innerText = type
 }
+function Test(){
+    click.play()
+}
 
 
 async function loop() {
